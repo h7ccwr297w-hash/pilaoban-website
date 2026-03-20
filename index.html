@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI帮你找爆款 + 生成羊毛衫工艺</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <header class="hero">
+        <div class="container">
+            <h1>AI 帮你找爆款 + 生成羊毛衫工艺</h1>
+            <p class="subtitle">帮服装商家选款 + 降低打版成本</p>
+            <div class="hero-buttons">
+                <a href="#hot-products" class="btn btn-primary">🔥 查看爆款</a>
+                <a href="#generator" class="btn btn-secondary">🧵 生成工艺</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 介绍区 -->
+    <section class="intro">
+        <div class="container">
+            <h2>基于 AI 技术的毛衣工艺单自动生成工具</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <span class="icon">⚡</span>
+                    <p>上传款式图，30 秒生成完整工艺单</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">📤</span>
+                    <p>支持横机制版程序导出</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🏢</span>
+                    <p>已服务 100+ 服装企业</p>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">⏱️</span>
+                    <p>平均节省打版时间 80%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能区 -->
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>立即生成你的工艺单</h2>
+            
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-content">
+                    <span class="upload-icon">📤</span>
+                    <p>点击或拖拽上传款式图</p>
+                    <span class="upload-hint">支持 jpg/png 格式</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden>
+            </div>
+
+            <div class="preview-area" id="previewArea" style="display: none;">
+                <img id="previewImage" src="" alt="预览">
+                <button class="remove-btn" id="removeImage">✕</button>
+            </div>
+
+            <div class="input-group">
+                <label>输入需求（厚度/材质/针数）</label>
+                <input type="text" id="requirements" placeholder="示例：26 支/2 股，12 针，秋冬款">
+            </div>
+
+            <button class="generate-btn" id="generateBtn">
+                <span class="btn-text">🚀 生成 AI 工艺</span>
+                <span class="loading" style="display: none;">生成中...</span>
+            </button>
+
+            <!-- 生成结果展示区 -->
+            <div class="result-area" id="resultArea" style="display: none;">
+                <h3>生成的工艺单</h3>
+                <div class="result-content" id="resultContent"></div>
+                <div class="result-actions">
+                    <button class="btn btn-secondary" id="downloadBtn">📥 下载工艺单</button>
+                    <button class="btn btn-primary" id="regenerateBtn">🔄 重新生成</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区 -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h3>生成结果请加微信</h3>
+                <p class="wechat-id">[你的微信号]</p>
+                <p class="or-divider">或</p>
+                <p>填写下方表单，稍后联系您</p>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label>姓名</label>
+                    <input type="text" name="name" required placeholder="请输入您的姓名">
+                </div>
+                <div class="form-group">
+                    <label>微信</label>
+                    <input type="text" name="wechat" required placeholder="请输入您的微信号">
+                </div>
+                <div class="form-group">
+                    <label>需求描述</label>
+                    <textarea name="description" rows="4" placeholder="请描述您的具体需求"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">提交</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 爆款展示区 -->
+    <section id="hot-products" class="hot-products">
+        <div class="container">
+            <h2>🔥 今日爆款推荐</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- 动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 AI工艺生成器. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

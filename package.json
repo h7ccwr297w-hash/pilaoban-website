@@ -1,0 +1,13 @@
+{
+  "name": "pilaoban-website",
+  "version": "1.0.0",
+  "description": "AI 工艺单生成器",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site'",
+    "start": "vercel"
+  },
+  "keywords": ["ai", "工艺单", "羊毛衫"],
+  "author": "",
+  "license": "MIT"
+}

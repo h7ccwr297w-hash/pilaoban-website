@@ -3,428 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 工艺生成器 | 羊毛衫智能制造</title>
-    
-    <!-- Google Fonts - 独特字体 -->
+    <title>AI工艺大脑 | 智能羊毛衫工艺生成系统</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 动态背景 -->
+    <div class="bg-animation">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+    </div>
+
     <!-- 导航栏 -->
     <nav class="navbar">
-        <div class="container nav-container">
+        <div class="nav-container">
             <div class="logo">
-                <span class="logo-icon">🧶</span>
-                <span class="logo-text">AI 工艺</span>
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" stroke="url(#logoGradient)" stroke-width="2"/>
+                        <path d="M20 8L24 16H32L26 22L30 30L20 24L10 30L14 22L8 16H16L20 8Z" fill="url(#logoGradient)"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00D4FF"/>
+                                <stop offset="100%" style="stop-color:#0099FF"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">AI工艺大脑</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#generator">工艺生成</a></li>
-                <li><a href="#cases">案例展示</a></li>
-                <li><a href="#process">工艺流程</a></li>
-                <li><a href="#hot-products">爆款推荐</a></li>
-                <li><a href="#contact" class="nav-cta">联系我们</a></li>
+                <li><a href="#features" class="nav-link">核心功能</a></li>
+                <li><a href="#generator" class="nav-link">智能生成</a></li>
+                <li><a href="#cases" class="nav-link">工艺案例</a></li>
+                <li><a href="#contact" class="nav-link">联系我们</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="菜单">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="#generator" class="nav-cta">立即体验</a>
         </div>
     </nav>
 
-    <!-- 头部 Hero -->
-    <header class="hero">
-        <div class="hero-bg-overlay"></div>
-        <div class="container hero-content">
+    <!-- Hero区域 -->
+    <section class="hero">
+        <div class="hero-content">
             <div class="hero-badge">
-                <span class="badge-icon">✨</span>
-                <span>智能制造新体验</span>
+                <span class="badge-dot"></span>
+                <span>AI驱动的智能制造</span>
             </div>
             <h1 class="hero-title">
-                <span class="title-line">AI 帮你找爆款</span>
-                <span class="title-line highlight">+ 生成羊毛衫工艺</span>
+                上传款式图
+                <span class="gradient-text">30秒生成</span>
+                <br>完整工艺单
             </h1>
-            <p class="hero-subtitle">基于 AI 技术的毛衣工艺单自动生成工具 · 帮服装商家选款 + 降低打版成本</p>
+            <p class="hero-subtitle">
+                基于GPT-4 Vision技术，自动识别款式特征，智能生成专业羊毛衫工艺单
+                <br>支持横机制版程序导出，已服务100+服装企业
+            </p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">30 秒</span>
-                    <span class="stat-label">快速生成</span>
+                    <span class="stat-number">30s</span>
+                    <span class="stat-label">生成时间</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">80%</span>
-                    <span class="stat-label">时间节省</span>
-                </div>
-                <div class="stat-divider"></div>
                 <div class="stat-item">
                     <span class="stat-number">100+</span>
                     <span class="stat-label">服务企业</span>
                 </div>
+                <div class="stat-item">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-label">节省时间</span>
+                </div>
             </div>
             <div class="hero-buttons">
                 <a href="#generator" class="btn btn-primary">
-                    <span>🚀 立即生成工艺</span>
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
+                    <span>🚀 免费试用</span>
                 </a>
                 <a href="#cases" class="btn btn-secondary">
                     <span>📋 查看案例</span>
                 </a>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <span>向下探索</span>
-            <div class="scroll-arrow"></div>
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="card-icon">🧶</div>
+                <div class="card-text">工艺单生成</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-icon">⚡</div>
+                <div class="card-text">极速响应</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-icon">🎯</div>
+                <div class="card-text">精准识别</div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <!-- 介绍区 -->
-    <section class="intro">
+    <!-- 核心功能 -->
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">核心优势</span>
-                <h2>重新定义毛衣工艺生成</h2>
-                <p class="section-desc">传统工艺单制作需要数小时，现在只需 30 秒</p>
+                <span class="section-tag">核心功能</span>
+                <h2 class="section-title">为什么选择AI工艺大脑</h2>
+                <p class="section-desc">三大核心能力，让工艺单生成从未如此简单</p>
             </div>
-            <div class="features">
+            <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <span>⚡</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
                     </div>
-                    <h3>极速生成</h3>
-                    <p>上传款式图，30 秒生成完整工艺单，效率提升 10 倍</p>
+                    <h3>智能图像识别</h3>
+                    <p>上传款式图片，AI自动识别领型、袖型、花纹等关键特征，无需手动输入</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <span>📤</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
                     </div>
-                    <h3>横机直出</span>
-                    <p>支持横机制版程序导出，无缝对接生产设备</p>
+                    <h3>完整工艺单生成</h3>
+                    <p>自动生成包含纱线规格、针型、编织工艺、尺寸表的完整工艺单文档</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <span>🏢</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
                     </div>
-                    <h3>行业信赖</span>
-                    <p>已服务 100+ 服装企业，覆盖濮院羊毛衫市场</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <span>⏱️</span>
-                    </div>
-                    <h3>成本优化</span>
-                    <p>平均节省打版时间 80%，大幅降低试错成本</p>
+                    <h3>制版程序导出</h3>
+                    <p>支持导出横机制版程序，直接用于生产，打通设计到生产全流程</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 工艺生成区 -->
+    <!-- 工艺生成器 -->
     <section id="generator" class="generator">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">AI 工艺生成</span>
-                <h2>开始你的工艺单</h2>
-                <p class="section-desc">上传款式图，AI 自动分析生成专业工艺参数</p>
+                <span class="section-tag">智能生成</span>
+                <h2 class="section-title">上传图片，即刻生成工艺单</h2>
+                <p class="section-desc">支持jpg/png格式，文件大小不超过5MB</p>
             </div>
             
-            <div class="generator-wrapper">
+            <div class="generator-card">
                 <div class="upload-section">
                     <div class="upload-area" id="uploadArea">
                         <div class="upload-content">
-                            <div class="upload-icon-wrapper">
-                                <span class="upload-icon">📤</span>
+                            <div class="upload-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
                             </div>
-                            <p class="upload-title">点击或拖拽上传款式图</p>
-                            <span class="upload-hint">支持 JPG/PNG 格式 · 最大 10MB</span>
+                            <h3>点击或拖拽上传款式图</h3>
+                            <p>支持 jpg、png 格式，建议尺寸 800x800 以上</p>
                         </div>
                         <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden>
                     </div>
-
+                    
                     <div class="preview-area" id="previewArea" style="display: none;">
-                        <div class="preview-header">
-                            <span>已上传图片</span>
-                            <button class="remove-btn" id="removeImage">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 6L6 18M6 6l12 12"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="preview-image-wrapper">
-                            <img id="previewImage" src="" alt="预览">
-                        </div>
+                        <img id="previewImage" src="" alt="预览">
+                        <button class="remove-btn" id="removeImage">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
                     </div>
+                </div>
 
-                    <div class="input-section">
-                        <div class="input-group">
-                            <label for="requirements">
-                                <span class="label-icon">💬</span>
-                                工艺需求
-                            </label>
-                            <input type="text" id="requirements" placeholder="示例：26 支/2 股，12 针，秋冬款">
-                        </div>
+                <div class="input-section">
+                    <div class="input-group">
+                        <label>工艺需求描述</label>
+                        <input type="text" id="requirements" placeholder="例如：26支/2股，12针，秋冬款，宽松版型">
+                        <span class="input-hint">描述纱线规格、针数、季节、版型等要求</span>
                     </div>
-
+                    
                     <button class="generate-btn" id="generateBtn">
-                        <span class="btn-content">
-                            <span class="btn-text">🚀 生成 AI 工艺</span>
-                            <span class="loading">
-                                <span class="loading-spinner"></span>
-                                <span>AI 分析中...</span>
-                            </span>
+                        <span class="btn-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </span>
+                        <span class="btn-text">生成 AI 工艺</span>
+                        <span class="loading" style="display: none;">
+                            <span class="spinner"></span>
+                            生成中...
                         </span>
                     </button>
                 </div>
 
-                <!-- 生成结果展示区 -->
-                <div class="result-section">
-                    <div class="result-area" id="resultArea" style="display: none;">
-                        <div class="result-header">
-                            <h3>
-                                <span class="result-icon">✨</span>
-                                生成的工艺单
-                            </h3>
-                            <span class="result-badge">AI 生成</span>
-                        </div>
-                        <div class="result-content" id="resultContent"></div>
+                <!-- 生成结果 -->
+                <div class="result-area" id="resultArea" style="display: none;">
+                    <div class="result-header">
+                        <h3>生成的工艺单</h3>
                         <div class="result-actions">
-                            <button class="btn btn-outline" id="downloadBtn">
+                            <button class="btn-icon-only" id="copyBtn" title="复制">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                                 </svg>
-                                <span>下载工艺单</span>
                             </button>
-                            <button class="btn btn-primary" id="regenerateBtn">
+                            <button class="btn-icon-only" id="downloadBtn" title="下载">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M23 4v6h-6M1 20v-6h6"/>
-                                    <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="7 10 12 15 17 10"/>
+                                    <line x1="12" y1="15" x2="12" y2="3"/>
                                 </svg>
-                                <span>重新生成</span>
                             </button>
                         </div>
                     </div>
+                    <div class="result-content" id="resultContent"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 工艺案例展示区 -->
-    <section class="cases" id="cases">
+    <!-- 工艺案例 -->
+    <section id="cases" class="cases">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">案例库</span>
-                <h2>📋 工艺案例展示</h2>
-                <p class="section-desc">2567 款针织衫完整工艺库 · 持续更新</p>
+                <span class="section-tag">工艺案例</span>
+                <h2 class="section-title">真实生成的工艺单示例</h2>
+                <p class="section-desc">查看AI生成的专业工艺单，了解详细内容格式</p>
             </div>
-            <div class="case-grid">
-                <!-- 前片案例 -->
+            <div class="cases-grid">
                 <div class="case-card">
-                    <div class="case-image-wrapper">
-                        <img src="/cases/前片验证图.png" alt="前片验证图">
-                        <div class="case-overlay">
-                            <span class="case-complexity">复杂度 16.5%</span>
-                        </div>
+                    <div class="case-image">
+                        <div class="case-placeholder">🧥</div>
                     </div>
                     <div class="case-content">
-                        <h3>前片工艺</h3>
-                        <p class="case-desc">复杂花样装饰</p>
-                        <ul class="case-specs">
-                            <li>
-                                <span class="spec-label">针数</span>
-                                <span class="spec-value">4104 针</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">密度</span>
-                                <span class="spec-value">18.6×22.7 针/cm</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">尺寸</span>
-                                <span class="spec-value">2206.5×4399.6mm</span>
-                            </li>
-                        </ul>
+                        <h3>圆领基础款羊毛衫</h3>
+                        <div class="case-tags">
+                            <span class="tag">26支/2股</span>
+                            <span class="tag">12针</span>
+                            <span class="tag">280g</span>
+                        </div>
+                        <p class="case-desc">经典圆领设计，适合秋冬内搭，采用平针编织工艺</p>
                     </div>
                 </div>
-                <!-- 后片案例 -->
                 <div class="case-card">
-                    <div class="case-image-wrapper">
-                        <img src="/cases/后片验证图.png" alt="后片验证图">
-                        <div class="case-overlay">
-                            <span class="case-complexity">复杂度 71.8%</span>
-                        </div>
+                    <div class="case-image">
+                        <div class="case-placeholder">🧣</div>
                     </div>
                     <div class="case-content">
-                        <h3>后片工艺</h3>
-                        <p class="case-desc">简洁设计</p>
-                        <ul class="case-specs">
-                            <li>
-                                <span class="spec-label">针数</span>
-                                <span class="spec-value">4104 针</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">密度</span>
-                                <span class="spec-value">18.6×22.7 针/cm</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">尺寸</span>
-                                <span class="spec-value">2206.5×4399.6mm</span>
-                            </li>
-                        </ul>
+                        <h3>高领加厚毛衣</h3>
+                        <div class="case-tags">
+                            <span class="tag">28支/2股</span>
+                            <span class="tag">9针</span>
+                            <span class="tag">380g</span>
+                        </div>
+                        <p class="case-desc">高领保暖设计，罗纹编织，适合寒冷地区</p>
                     </div>
                 </div>
-                <!-- 袖子案例 -->
                 <div class="case-card">
-                    <div class="case-image-wrapper">
-                        <img src="/cases/袖子验证图.png" alt="袖子验证图">
-                        <div class="case-overlay">
-                            <span class="case-complexity">复杂度 52.6%</span>
-                        </div>
+                    <div class="case-image">
+                        <div class="case-placeholder">🎽</div>
                     </div>
                     <div class="case-content">
-                        <h3>袖子工艺</h3>
-                        <p class="case-desc">标准版型</p>
-                        <ul class="case-specs">
-                            <li>
-                                <span class="spec-label">针数</span>
-                                <span class="spec-value">4104 针</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">密度</span>
-                                <span class="spec-value">18.6×22.7 针/cm</span>
-                            </li>
-                            <li>
-                                <span class="spec-label">尺寸</span>
-                                <span class="spec-value">2206.5×4399.6mm</span>
-                            </li>
-                        </ul>
+                        <h3>V领开衫外套</h3>
+                        <div class="case-tags">
+                            <span class="tag">24支/2股</span>
+                            <span class="tag">14针</span>
+                            <span class="tag">320g</span>
+                        </div>
+                        <p class="case-desc">V领开衫设计，纽扣门襟，适合春秋季节</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 工艺流程区 -->
-    <section class="process" id="process">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">工作流程</span>
-                <h2>🔄 工艺流程</h2>
-                <p class="section-desc">四步完成从设计到生产的全流程</p>
-            </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-wrapper">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>上传款式图</h3>
-                            <p>提供设计图或实物图片</p>
-                        </div>
-                    </div>
-                    <div class="step-connector"></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-wrapper">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>AI 生成工艺单</h3>
-                            <p>30 秒生成完整工艺参数</p>
-                        </div>
-                    </div>
-                    <div class="step-connector"></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-wrapper">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>生成验证图</h3>
-                            <p>核对制版是否正确</p>
-                        </div>
-                    </div>
-                    <div class="step-connector"></div>
-                </div>
-                <div class="process-step">
-                    <div class="step-wrapper">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>横机编织</h3>
-                            <p>导出横机制版程序</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 爆款展示区 -->
-    <section id="hot-products" class="hot-products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">市场趋势</span>
-                <h2>🔥 今日爆款推荐</h2>
-                <p class="section-desc">基于全网销售数据智能分析</p>
-            </div>
-            <div class="products-grid" id="productsGrid">
-                <!-- 动态加载 -->
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系区 -->
+    <!-- 联系我们 -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info-section">
-                    <div class="section-header contact-header">
-                        <span class="section-tag">联系我们</span>
-                        <h2>开始合作</h2>
-                        <p class="section-desc">添加微信或填写表单，我们将尽快与您联系</p>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-item-icon">💬</div>
-                            <div class="contact-item-content">
-                                <span class="contact-item-label">微信</span>
-                                <span class="contact-item-value wechat-id">[待填写]</span>
-                            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">联系我们</span>
+                    <h2>获取生成结果</h2>
+                    <p>生成工艺单后，请添加微信获取完整文档和技术支持</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-6.656-6.088V8.89c-.135-.01-.27-.027-.407-.03zm-2.53 3.274c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z"/>
+                            </svg>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📞</div>
-                            <div class="contact-item-content">
-                                <span class="contact-item-label">电话</span>
-                                <span class="contact-item-value phone-id">[待填写]</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📍</div>
-                            <div class="contact-item-content">
-                                <span class="contact-item-label">地址</span>
-                                <span class="contact-item-value address-id">浙江桐乡濮院羊毛衫市场</span>
-                            </div>
+                        <div class="contact-detail">
+                            <span class="contact-label">微信号</span>
+                            <span class="contact-value wechat">Awynlfd0</span>
                         </div>
                     </div>
                 </div>
-
-                <div class="contact-form-section">
+                
+                <div class="contact-form-wrapper">
                     <form id="contactForm" class="contact-form">
                         <div class="form-group">
-                            <label for="form-name">姓名</label>
-                            <input type="text" id="form-name" name="name" required placeholder="请输入您的姓名">
+                            <label>您的姓名</label>
+                            <input type="text" name="name" placeholder="请输入姓名" required>
                         </div>
                         <div class="form-group">
-                            <label for="form-wechat">微信</label>
-                            <input type="text" id="form-wechat" name="wechat" required placeholder="请输入您的微信号">
+                            <label>您的微信</label>
+                            <input type="text" name="wechat" placeholder="请输入微信号" required>
                         </div>
                         <div class="form-group">
-                            <label for="form-description">需求描述</label>
-                            <textarea id="form-description" name="description" rows="4" placeholder="请描述您的具体需求"></textarea>
+                            <label>需求描述</label>
+                            <textarea name="description" rows="4" placeholder="请描述您的具体需求"></textarea>
                         </div>
                         <button type="submit" class="submit-btn">
-                            <span>提交信息</span>
+                            <span>提交咨询</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
                             </svg>
                         </button>
                     </form>
@@ -433,26 +336,37 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo">
-                        <span class="logo-icon">🧶</span>
-                        <span class="logo-text">AI 工艺</span>
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <circle cx="20" cy="20" r="18" stroke="url(#footerGradient)" stroke-width="2"/>
+                                <path d="M20 8L24 16H32L26 22L30 30L20 24L10 30L14 22L8 16H16L20 8Z" fill="url(#footerGradient)"/>
+                                <defs>
+                                    <linearGradient id="footerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#00D4FF"/>
+                                        <stop offset="100%" style="stop-color:#0099FF"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">AI工艺大脑</span>
                     </div>
-                    <p>智能制造 · 效率革命</p>
+                    <p>基于AI技术的毛衣工艺单自动生成工具</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#generator">工艺生成</a>
-                    <a href="#cases">案例展示</a>
-                    <a href="#process">工艺流程</a>
+                    <a href="#features">核心功能</a>
+                    <a href="#generator">智能生成</a>
+                    <a href="#cases">工艺案例</a>
                     <a href="#contact">联系我们</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 AI 工艺生成器。保留所有权利。</p>
+                <p>&copy; 2026 AI工艺大脑. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -460,4 +374,3 @@
     <script src="script.js"></script>
 </body>
 </html>
- 

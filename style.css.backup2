@@ -1,0 +1,456 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 导航栏 */
+.navbar {
+  background: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #1a237e;
+}
+
+/* Hero 区域 */
+.hero {
+  background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* 按钮 */
+.btn {
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+}
+
+.btn-secondary {
+  background: white;
+  color: #1a237e;
+  border: 2px solid #1a237e;
+}
+
+.btn-secondary:hover {
+  background: #1a237e;
+  color: white;
+}
+
+/* 工艺生成区 */
+.generator {
+  padding: 80px 0;
+  background: white;
+}
+
+.generator h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a237e;
+}
+
+.upload-area {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  padding: 60px 40px;
+  background: #f8f9fa;
+  border: 2px dashed #ccc;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.upload-area:hover {
+  border-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.preview-area {
+  max-width: 600px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.preview-area img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.remove-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.input-group {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #1a237e;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 25px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #f59e0b;
+}
+
+.generate-btn {
+  width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  display: block;
+}
+
+.result-area {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 15px;
+}
+
+.result-area h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.result-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* 案例展示 */
+.cases {
+  padding: 80px 0;
+  background: #f5f5f5;
+}
+
+.cases h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a237e;
+}
+
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.case-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+}
+
+.case-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #1a237e;
+}
+
+.case-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.case-card ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.case-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 工艺流程 */
+.process {
+  padding: 80px 0;
+  background: white;
+}
+
+.process h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1a237e;
+}
+
+.process-steps {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.step {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.step-num {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #1a237e;
+}
+
+.step p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 联系方式 */
+.contact {
+  padding: 80px 0;
+  background: #f5f5f5;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1a237e;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-info p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.wechat, .phone {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a237e;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #1a237e;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f59e0b;
+}
+
+/* Footer */
+footer {
+  background: #1a237e;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .process-steps {
+    flex-direction: column;
+  }
+  
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+}
